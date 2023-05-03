@@ -15,7 +15,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        $cards = Card::where('is_published', true)->orderBy('updated_at', 'DESC')->limit(5)->with('category', 'tags')->get();
+        $cards = Card::where('is_published', true)->orderBy('updated_at', 'DESC')->with('category', 'tags')->get();
         return response()->json($cards);
     }
 
